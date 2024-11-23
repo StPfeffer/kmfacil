@@ -1,0 +1,18 @@
+workflows:
+  - changed-files:
+      - any-glob-to-any-file: [ '.github/workflows/**/*' ]
+
+dependency:
+  - changed-files:
+      - any-glob-to-any-file: [ 'pom.xml' ]
+
+docker:
+  - changed-files:
+      - any-glob-to-any-file: [ 'Dockerfile', 'compose.yaml', '.dockerignore' ]
+
+bug:
+  - head-branch: [ '^fix', 'fix', 'bugfix', 'issue', 'bug' ]
+
+github:
+  - changed-files:
+      - any-glob-to-any-file: [ '.github/**/*' ]
